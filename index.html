@@ -1,41 +1,178 @@
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio - Lavinia Li</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header class="header"> <!-- class="name we gave this element"-->
-        <a href="#" class="logo"><span>Lavin</span>ia</a>
+<body class="overflow-x-hidden font-Outfit dark:bg-darkTheme dark:text-white">
+    <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden">
+        <img src="./images/header-bg-color.png" alt="" class="w-full">
+    </div>
 
-        <nav class="navbar">
-            <a href="#">about</a>
-            <a href="#">projects</a>
-        </nav>
 
-        <a href="#" class="contact">Contact Me</a>
-    </header>
+    <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
+        <img src="./images/logo-blue-dark-1.png" alt="Logo" class="cursor-pointer mr-14">
+        <div class="flex items-center gap-4">
+            <a href="#projects" class="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500">projects</a>
+            <a href="#about" class="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500">about me</a>
+            <button><img src="./images/moon_icon.png" alt="" class="w-6"></button>
 
-    <section class="home">
-        <div class="home-content">
-            <h3>Hi, I'm</h3>
-            <h1><span>Lavinia</span></h1>
-            <p>Software Engineer by day</p>
-            <p>_______________ by night</p>
+            <button class="block md:hidden ml-3" onclick="openMenu()">
+                <img src="./images/menu-black.png" alt="" class="w-6">
+            </button>
+        </div>
+
+        <!-- mobile menu -->
+         <ul id="sideMenu" class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500">
+            <div class="absolute right-6 top-6" onclick="closeMenu()">
+                <img src="./images/close-black.png" alt="" class="w-5">
             </div>
-        <div class="img-box">
-            <img src="image.JPG" alt="">
-        </div>
-    </section>
+            <li><a href="#projects" onclick="closeMenu()">projects</a></li>
+            <li><a href="#about" onclick="closeMenu()">about me</a></li>
+         </ul>
 
-    <footer class="footer">
-        <div class="social">            
-            <a href="#"><i class='bx bx-envelope' ></i></a>
-            <a href="#"><i class='bx bxl-instagram'></i></a>
+    </nav>
+
+    <!-- header -->
+    <div class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-3">
+        <img src="./images/profile-icon.png" alt="" class="rounded-full w-36">
+
+        <h3 class="flex items-end text-xl md:text-2xl">Hi, I'm</h3>
+        <h1 class="text-3xl sm:text-6xl lg:text-[66px] font-bold leading-[1.2]"><span style="color: rgb(117, 117, 238);">Lavinia</span></h1>
+        <p class="max-w-2xl mx-auto">Software Engineer by day</p>
+        <p class="max-w-2xl mx-auto">_______________ by night</p> <!-- TODO: update this part with some sort of animation where the description changes-->
+    </div>
+
+    <!-- about me -->
+     <div id="about" class="w-full px-[12%] py-10 scroll-mt-20">
+        <h4 class="text-center mb-2 text-lg">Introduction</h4>
+        <h2 class="text-center text-5xl">About Me</h2>
+
+        <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
+            <div class="max-w-max mx-auto relative">
+                <img src="./images/profile.JPG" alt="" class="w-64 sm:w-80 rounded-3xl max-w-none">
+                <div class="bg-white w-1/2 aspect-square absolute right-0 bottom-0 rounded-full translate-x-1/4 translate-y-1/3 shadow-[0_4px_55px_rgba(149,0,162,0.15)] flex items-center justify-center">
+                    <img src="./images/circular-text.png" alt="" class="w-full animate-spin_slow">
+                    <img src="./images/dev-icon.png" alt="" class="w-1/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+
+                </div>
+            </div>
+            <div class="flex-1">
+                <p class="mb-10 max-w-2xl">some free text</p>
+
+                <ul class="grid grid-cols-3 sm:grid-cols-auto gap-6 max-w-2xl">
+                    <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
+                        <img src="./images/code-icon.png" alt="" class="w-7 mt-3">
+                        <h3 class="my-4 font-semibold text-gray-700">Languages</h3>
+                        <p class="text-gray-600 text-sm">HTML, CSS, Java, React, Gosu</p>
+                    </li>
+                    <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
+                        <img src="./images/edu-icon.png" alt="" class="w-7 mt-3">
+                        <h3 class="my-4 font-semibold text-gray-700">Education</h3>
+                        <p class="text-gray-600 text-sm">BS in Computer Science</p>
+                    </li>
+                    <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
+                        <img src="./images/project-icon.png" alt="" class="w-7 mt-3">
+                        <h3 class="my-4 font-semibold text-gray-700">Projects</h3>
+                        <p class="text-gray-600 text-sm">add in projects</p>
+                    </li>
+                </ul>
+                <h4 class="my-6 text-gray-700">Tools I use</h4>
+
+                <ul class="flex items-center gap-3 sm:gap-5">
+                    <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./images/vscode.png" alt="" class="w-5 sm:w-7">
+                    </li>
+                    <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./images/firebase.png" alt="" class="w-5 sm:w-7">
+                    </li>
+                    <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./images/mongodb.png" alt="" class="w-5 sm:w-7">
+                    </li>
+                    <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./images/figma.png" alt="" class="w-5 sm:w-7">
+                    </li>
+                    <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./images/git.png" alt="" class="w-5 sm:w-7">
+                    </li>
+                </ul>
+            </div>
         </div>
-        <p class="copyright">© 2025 Lavinia Li | All Rights Reserved</p>
-    </footer>
+     </div>
+
+     <!-- projects -->
+      <div id="projects" class="w-full px-[12%] py-10 scroll-mt-20">
+        <h4 class="text-center mb-2 text-lg">My portfolio</h4>
+        <h2 class="text-center text-5xl">My latest work</h2>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12">some text about portfolio</p>
+
+        <div class="grid grid-cols-4 sm:grid-cols-auto gap-5">
+            <div class="aspect-square bg-[url('./images/work-1.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
+                <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+                    <div>
+                        <h2 class="font-semibold">Frontend project</h2>
+                        <p class="text-sm text-gray-700">Web Design</p>
+                    </div>
+                    <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+                        <img src="./images/send-icon.png" alt="" class="w-5">
+                    </div>
+                </div>
+            </div>
+            <div class="aspect-square bg-[url('./images/work-2.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
+                <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+                    <div>
+                        <h2 class="font-semibold">Frontend project</h2>
+                        <p class="text-sm text-gray-700">Web Design</p>
+                    </div>
+                    <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+                        <img src="./images/send-icon.png" alt="" class="w-5">
+                    </div>
+                </div>
+            </div>
+            <div class="aspect-square bg-[url('./images/work-3.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
+                <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+                    <div>
+                        <h2 class="font-semibold">Frontend project</h2>
+                        <p class="text-sm text-gray-700">Web Design</p>
+                    </div>
+                    <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+                        <img src="./images/send-icon.png" alt="" class="w-5">
+                    </div>
+                </div>
+            </div>
+            <div class="aspect-square bg-[url('./images/work-4.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
+                <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+                    <div>
+                        <h2 class="font-semibold">Frontend project</h2>
+                        <p class="text-sm text-gray-700">Web Design</p>
+                    </div>
+                    <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+                        <img src="./images/send-icon.png" alt="" class="w-5">
+                    </div>
+                </div>
+            </div>
+          </div>
+          <a href="#" class="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500">Show more
+            <img src="./images/right-arrow-bold.png" alt="" class="w-4">
+        </a>
+      </div>
+
+      <!-- footer -->
+       <div class="mt-20">
+            <div class="text-center pb-6">
+                <a href="#" class="text-center w-10 text-2xl h-10 leading-9"><i class='bx bx-envelope' ></i></a>
+                <a href="https://instagram.com/lavinniedarling" class="text-center w-10 text-2xl h-10 leading-9"><i class='bx bxl-instagram'></i></a>
+                <p class="text-center text-sm">© 2025 Lavinia Li | All Rights Reserved</p>
+            </div>
+       </div>
+
+
+    <script src="./script.js"></script>
 </body>
 </html>
