@@ -35,3 +35,26 @@ function toggleTheme() {
         localStorage.theme = 'light';
     }
 }
+
+// -- rotating descriptions animation -- 
+const words = ["Cat Mom", "Coffee Enthusiast", "Blindbox Collector"];
+    let index = 0;
+    const textElement = document.getElementById("rotating-text");
+
+    function rotateText() {
+      gsap.to(textElement, {
+        duration: 0.3, // Time for animation
+        y: -50, // Move upward
+        opacity: 0, // Fade out
+        onComplete: () => {
+          index = (index + 1) % words.length; // Move to next word
+          textElement.textContent = words[index]; // Update text
+          gsap.fromTo(
+            textElement,
+            { y: 50, opacity: 0 }, // Start below
+            { y: 0, opacity: 1, duration: 0.3 } // Move to position and fade in
+          );
+        },
+      });
+    }
+    setInterval(rotateText, 2000);
