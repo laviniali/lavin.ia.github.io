@@ -28,6 +28,7 @@ if(localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchM
 }
     
 function toggleTheme() {
+    document.documentElement.classList.toggle('dark')
     if(document.documentElement.classList.contains('dark')) {
         localStorage.theme = 'dark';
     } else {
