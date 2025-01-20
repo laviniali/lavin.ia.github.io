@@ -28,14 +28,16 @@
             </button>
 
             <button class="block md:hidden ml-3" onclick="openMenu()">
-                <img src="./images/menu-black.png" alt="" class="w-6">
+                <img src="./images/menu-black.png" alt="" class="w-6 dark:hidden">
+                <img src="./images/menu-white.png" alt="" class="w-6 hidden dark:block">
             </button>
         </div>
 
         <!-- mobile menu -->
-         <ul id="sideMenu" class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500">
+         <ul id="sideMenu" class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 dark:bg-[#2a004a] dark:text-white">
             <div class="absolute right-6 top-6" onclick="closeMenu()">
-                <img src="./images/close-black.png" alt="" class="w-5">
+                <img src="./images/close-black.png" alt="" class="w-5 cursor-pointer dark:hidden">
+                <img src="./images/close-white.png" alt="" class="w-5 cursor-pointer hidden dark:block">
             </div>
             <li><a href="#projects" onclick="closeMenu()">projects</a></li>
             <li><a href="#about" onclick="closeMenu()">about me</a></li>
@@ -70,24 +72,27 @@
             <div class="flex-1">
                 <p class="mb-10 max-w-2xl">some free text</p>
 
-                <ul class="grid grid-cols-3 sm:grid-cols-auto gap-6 max-w-2xl">
-                    <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
-                        <img src="./images/code-icon.png" alt="" class="w-7 mt-3">
-                        <h3 class="my-4 font-semibold text-gray-700">Languages</h3>
-                        <p class="text-gray-600 text-sm">HTML, CSS, Java, React, Gosu</p>
+                <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
+                    <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000] dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50">
+                        <img src="./images/code-icon.png" alt="" class="w-7 mt-3 dark:hidden">
+                        <img src="./images/code-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block">
+                        <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Languages</h3>
+                        <p class="text-gray-600 text-sm dark:text-white/80">HTML, CSS, Java, React, Gosu</p>
                     </li>
-                    <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
-                        <img src="./images/edu-icon.png" alt="" class="w-7 mt-3">
-                        <h3 class="my-4 font-semibold text-gray-700">Education</h3>
-                        <p class="text-gray-600 text-sm">BS in Computer Science</p>
+                    <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000] dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50">
+                        <img src="./images/edu-icon.png" alt="" class="w-7 mt-3 dark:hidden">
+                        <img src="./images/edu-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block">
+                        <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Education</h3>
+                        <p class="text-gray-600 text-sm dark:text-white/80">BS in Computer Science</p>
                     </li>
-                    <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
-                        <img src="./images/project-icon.png" alt="" class="w-7 mt-3">
-                        <h3 class="my-4 font-semibold text-gray-700">Projects</h3>
-                        <p class="text-gray-600 text-sm">add in projects</p>
+                    <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000] dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50">
+                        <img src="./images/project-icon.png" alt="" class="w-7 mt-3 dark:hidden">
+                        <img src="./images/project-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block">
+                        <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Projects</h3>
+                        <p class="text-gray-600 text-sm dark:text-white/80">add in projects</p>
                     </li>
                 </ul>
-                <h4 class="my-6 text-gray-700">Tools I use</h4>
+                <h4 class="my-6 text-gray-700 dark:text-white/80">Tools I use</h4>
 
                 <ul class="flex items-center gap-3 sm:gap-5">
                     <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
@@ -112,11 +117,11 @@
 
      <!-- projects -->
       <div id="projects" class="w-full px-[12%] py-10 scroll-mt-20">
-        <h4 class="text-center mb-2 text-lg">My portfolio</h4>
+        <h4 class="text-center mb-2 text-lg">My Portfolio</h4>
         <h2 class="text-center text-5xl">My latest work</h2>
         <p class="text-center max-w-2xl mx-auto mt-5 mb-12">some text about portfolio</p>
 
-        <div class="grid grid-cols-4 sm:grid-cols-auto gap-5">
+        <div class="grid grid-cols-1 sm:grid-cols-auto gap-5 dark:text-black">
             <div class="aspect-square bg-[url('./images/work-1.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
                 <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
                     <div>
@@ -131,8 +136,8 @@
             <div class="aspect-square bg-[url('./images/work-2.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
                 <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
                     <div>
-                        <h2 class="font-semibold">Frontend project</h2>
-                        <p class="text-sm text-gray-700">Web Design</p>
+                        <h2 class="font-semibold">Card Game</h2>
+                        <p class="text-sm text-gray-700">Mobile App</p>
                     </div>
                     <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
                         <img src="./images/send-icon.png" alt="" class="w-5">
@@ -142,8 +147,8 @@
             <div class="aspect-square bg-[url('./images/work-3.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
                 <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
                     <div>
-                        <h2 class="font-semibold">Frontend project</h2>
-                        <p class="text-sm text-gray-700">Web Design</p>
+                        <h2 class="font-semibold">3D Room</h2>
+                        <p class="text-sm text-gray-700">Blender</p>
                     </div>
                     <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
                         <img src="./images/send-icon.png" alt="" class="w-5">
@@ -153,8 +158,8 @@
             <div class="aspect-square bg-[url('./images/work-4.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
                 <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
                     <div>
-                        <h2 class="font-semibold">Frontend project</h2>
-                        <p class="text-sm text-gray-700">Web Design</p>
+                        <h2 class="font-semibold">UI/UX Design</h2>
+                        <p class="text-sm text-gray-700">UI/UX Design</p>
                     </div>
                     <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
                         <img src="./images/send-icon.png" alt="" class="w-5">
@@ -162,15 +167,16 @@
                 </div>
             </div>
           </div>
-          <a href="#" class="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500">Show more
-            <img src="./images/right-arrow-bold.png" alt="" class="w-4">
+          <a href="#" class="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-[#2a00a]">Show more
+            <img src="./images/right-arrow-bold.png" alt="" class="w-4 dark:hidden">
+            <img src="./images/right-arrow-bold-dark.png" alt="" class="w-4 hidden dark:block">
         </a>
       </div>
 
       <!-- footer -->
        <div class="mt-20">
             <div class="text-center pb-6">
-                <a href="#" class="text-center w-10 text-2xl h-10 leading-9"><i class='bx bx-envelope' ></i></a>
+                <a href="mailto:li.lavinia9@gmail.com" class="text-center w-10 text-2xl h-10 leading-9"><i class='bx bx-envelope' ></i></a>
                 <a href="https://instagram.com/lavinniedarling" class="text-center w-10 text-2xl h-10 leading-9"><i class='bx bxl-instagram'></i></a>
                 <p class="text-center text-sm">© 2025 Lavinia Li | All Rights Reserved</p>
             </div>
